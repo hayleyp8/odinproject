@@ -4,6 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple DOM example</title>
+
+    <style>
+      .highlight {
+        color: white;
+        background-color: black;
+        padding: 10px;
+        width: 250px;
+        text-align: center;
+      }
+    </style>
+    
+
   </head>
 
   <body>
@@ -34,7 +46,22 @@
         linkPara.appendChild(text);
         
         // MOVING AND REMOVING ELEMENTS
-        
+        sect.appendChild(linkPara); // moves to the end
+        sect.removeChild(linkPara); // removes but this method is not supported in old browsers
+        //linkPara.parentNode.removeChild(linkPara); // this is the same as above but for old browsers
+
+        // MANIPULATING STYLING
+        // doing this way will add inline styling
+        // when opening on browswer in developer tools, the html will show as inline styles
+        // this is using HTMLElement.style
+        /*
+        para.style.color = "white";
+        para.style.backgroundColor = "black";
+        para.style.padding = "10px";
+        para.style.width = "250px";
+        para.style.textAlign = "center";
+        */
+        para.setAttribute("class", "highlight"); // this changes so it uses CSS instead of inline
         
       </script>
 
